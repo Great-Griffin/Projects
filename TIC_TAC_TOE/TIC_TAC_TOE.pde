@@ -131,6 +131,8 @@ void AI(){
   }
 }
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 void AI2(){
     if(y < 210){
     if(y < 110){//    row A
@@ -211,6 +213,8 @@ void AI2(){
     }
   }
 }
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 void Win(){
   if(a1 == 1){//test if Player wins
