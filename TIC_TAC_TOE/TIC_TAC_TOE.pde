@@ -134,13 +134,40 @@ void AI(){
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 void AI2(){
+  if(a1+b1+c1 == 4){//vert 1
+  
+  }
+  if(a1+b2+c3 == 4){//diag
+  
+  }
+  if(a1+a2+a3 == 4){//hori a
+  
+  }
+  if(a2+b2+c2 == 4){//vert 2
+  
+  }
+  if(a3+b3+c3 == 4){//vert 3
+  
+  }
+  if(a3+b2+c1 == 4){//diag
+  
+  }
+  if(b1+b2+b3 == 4){//hori b
+  
+  }
+  if(c1+c2+c3 == 4){//hori c
+  
+  }
+}
+
+void AI3(){
     if(y < 210){
     if(y < 110){//    row A
       if(x < 210){
         if(x < 110){//     A1
-          if(a1 == 0){
-            line(20,20,100,100);
-            line(20,100,100,20);
+          if(c3 == 0){//   C3
+            line(220,220,300,300);
+            line(220,300,300,220);
             a1 = 2;
             Win();
           }
