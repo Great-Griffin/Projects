@@ -15,6 +15,7 @@ int x;
 
 int player;
 int gameOver;
+int win;
 
 void setup(){
   a1 = 0;
@@ -28,6 +29,7 @@ void setup(){
   c3 = 0;
   player = 2;
   gameOver = 0;
+  win = 0;
   size(320,320);
   rectMode(CORNER);
   ellipseMode(CORNER);
@@ -67,14 +69,14 @@ void player1move() {
           if(a1 == 0){
             ellipse(20,20,80,80);
             a1 = 1;
-            Tie();
+            Win();
             player = 2;
           }
         }else{//     A2
           if(a2 == 0){
             ellipse(120,20,80,80);
             a2 = 1;
-            Tie();
+            Win();
             player = 2;
           }
         }
@@ -82,7 +84,7 @@ void player1move() {
         if(a3 == 0){
           ellipse(220,20,80,80);
           a3 = 1;
-          Tie();
+          Win();
           player = 2;
         }
       }
@@ -92,14 +94,14 @@ void player1move() {
           if(b1 == 0){
             ellipse(20,120,80,80);
             b1 = 1;
-            Tie();
+            Win();
             player = 2;
           }
         }else{//        B2
           if(b2 == 0){
             ellipse(120,120,80,80);
             b2 = 1;
-            Tie();
+            Win();
             player = 2;
           } 
         }
@@ -107,7 +109,7 @@ void player1move() {
         if(b3 == 0){
           ellipse(220,120,80,80);
           b3 = 1;
-          Tie();
+          Win();
           player = 2;
         }
       }
@@ -118,14 +120,14 @@ void player1move() {
         if(c1 == 0){
           ellipse(20,220,80,80);
           c1 = 1;
-          Tie();
+          Win();
           player = 2;
         }
       }else{//       C2
         if(c2 == 0){
           ellipse(120,220,80,80);
           c2 = 1;
-          Tie();
+          Win();
           player = 2;
         }
       }
@@ -133,7 +135,7 @@ void player1move() {
       if(c3 == 0){
         ellipse(220,220,80,80);
         c3 = 1;
-        Tie();
+        Win();
         player = 2;
       }
     }
@@ -141,7 +143,7 @@ void player1move() {
 }
 
 void player2move(){
-    if(y < 210){
+  if(y < 210){
     if(y < 110){//    row A
       if(x < 210){
         if(x < 110){//     A1
@@ -149,7 +151,7 @@ void player2move(){
             line(20,20,100,100);
             line(20,100,100,20);
             a1 = 2;
-            Tie();
+            Win();
             player = 1;
           }
         }else{//     A2
@@ -157,7 +159,7 @@ void player2move(){
             line(120,20,200,100);
             line(120,100,200,20);
             a2 = 2;
-            Tie();
+            Win();
             player = 1;   
           } 
         }
@@ -166,7 +168,7 @@ void player2move(){
           line(220,20,300,100);
           line(220,100,300,20);
           a3 = 2;
-          Tie();
+          Win();
           player = 1;
         }
       }
@@ -177,7 +179,7 @@ void player2move(){
             line(20,120,100,200);
             line(20,200,100,120);
             b1 = 2;
-            Tie();
+            Win();
             player = 1;
           }
         }else{//        B2
@@ -185,7 +187,7 @@ void player2move(){
             line(120,120,200,200);
             line(120,200,200,120);
             b2 = 2;
-            Tie();
+            Win();
             player = 1;
           } 
         }
@@ -194,7 +196,7 @@ void player2move(){
           line(220,120,300,200);
           line(220,200,300,120);
           b3 = 2;
-          Tie();
+          Win();
           player = 1;
         }
       }
@@ -206,7 +208,7 @@ void player2move(){
           line(20,220,100,300);
           line(20,300,100,220);
           c1 = 2;
-          Tie();
+          Win();
           player = 1;
         }
       }else{//       C2
@@ -214,7 +216,7 @@ void player2move(){
           line(120,220,200,300);
           line(120,300,200,220);
           c2 = 2;
-          Tie();
+          Win();
           player = 1;
         }
       }
@@ -223,7 +225,7 @@ void player2move(){
         line(220,220,300,300);
         line(220,300,300,220);
         c3 = 2;
-        Tie();
+        Win();
         player = 1;
       }
     }
@@ -237,6 +239,7 @@ void Win(){
     if(a2 == 1){
       if(a3 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -244,6 +247,7 @@ void Win(){
     if(b2 == 1){
       if(c3 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -251,6 +255,7 @@ void Win(){
     if(b1 == 1){
       if(c1 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -258,6 +263,7 @@ void Win(){
     if(b2 == 1){
       if(c2 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -265,6 +271,7 @@ void Win(){
     if(b2 == 1){
       if(c1 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -272,6 +279,7 @@ void Win(){
     if(b3 == 1){
       if(c3 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -279,6 +287,7 @@ void Win(){
     if(b2 == 1){
       if(b3 == 1){
         Win1();
+        win = 1;
       }
     }
   }
@@ -286,84 +295,93 @@ void Win(){
     if(c2 == 1){
       if(c3 == 1){
         Win1();
+        win = 1;
       }
     }
   }
   
 //---------------------------------------------
   
-  if(a1  ==2){//test if AI wins
-    if(a2  ==2){
-      if(a3  ==2){
+  if(a1  == 2){//test if AI wins
+    if(a2  == 2){
+      if(a3  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(a1  ==2){
-    if(b2  ==2){
-      if(c3  ==2){
+  if(a1  == 2){
+    if(b2  == 2){
+      if(c3  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(a1  ==2){
-    if(b1  ==2){
-      if(c1  ==2){
+  if(a1  == 2){
+    if(b1  == 2){
+      if(c1  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(a2  ==2){
-    if(b2  ==2){
-      if(c2  ==2){
+  if(a2  == 2){
+    if(b2  == 2){
+      if(c2  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(a3  ==2){
-    if(b2  ==2){
-      if(c1  ==2){
+  if(a3  == 2){
+    if(b2  == 2){
+      if(c1  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(a3  ==2){
-    if(b3  ==2){
-      if(c3  ==2){
+  if(a3  == 2){
+    if(b3  == 2){
+      if(c3  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(b1  ==2){
-    if(b2  ==2){
-      if(b3  ==2){
+  if(b1  == 2){
+    if(b2  == 2){
+      if(b3  == 2){
          Win2();
+         win = 1;
       }
     }
   }
-  if(c1  ==2){
-    if(c2  ==2){
-      if(c3  ==2){
+  if(c1  == 2){
+    if(c2  == 2){
+      if(c3  == 2){
          Win2();
+         win = 1;
       }
     }
   }
 }
 
 void Tie(){
-  if(a1+a2+a3+b1+b2+b3+c1+c2+c3 == 14){
-    textAlign(CENTER);
-    fill(255,0,0);
-    textSize(120);
-    text("TIE",width/2,height/2);
-    gameOver = 1;
-  }else{
-    Win();
-  }
+  if(win == 0){
+    if(a1+a2+a3+b1+b2+b3+c1+c2+c3 == 14){
+      textAlign(CENTER);
+      fill(255,0,0);
+      textSize(120);
+      text("TIE",width/2,height/2);
+      gameOver = 1;
+    }
+  }  
 }
 
 void Win1(){
-  fill(0,255,0);
+  fill(0,0,255);
   textSize(40);
   textAlign(CENTER);
   text("Player 1 Wins",width/2,height/2);
